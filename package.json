@@ -1,0 +1,13 @@
+{
+  "name": "skland-attendance-cfworker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "wrangler": "^3.0.0"
+  }
+}
