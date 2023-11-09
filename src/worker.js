@@ -57,7 +57,10 @@ export default {
 					'Attendance success:\n' +
 					`${data.nickName} (${data.channelName})\n` +
 					attandanceRespose.data.awards.map((award) => award.resource.name + ' * ' + award.count).join('\n');
-			else throw new Error('Attendance error:\n' + JSON.stringify(attandanceRespose, null, 2));
+			else {
+				result = 'Attendance error:\n' + attandanceRespose;
+				throw new Error(result);
+			}
 			console.log(result);
 
 			// Send message to Telegram
