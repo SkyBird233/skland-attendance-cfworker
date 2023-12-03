@@ -137,9 +137,6 @@ async function attandance(data, cred, sktoken) {
 }
 
 async function main(event, env, ctx) {
-	// Wait random time
-	await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000 * 60 * 5));
-
 	// Get cred and skland token
 	const { code } = await get_oauth2_code(env.TOKEN);
 	const { cred, token: sktoken } = await get_cred_and_sktoken(code);
@@ -165,6 +162,9 @@ async function main(event, env, ctx) {
 export default {
 	async scheduled(event, env, ctx) {
 		try {
+			// Wait random time
+			await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000 * 60 * 5));
+
 			await main(event, env, ctx);
 		} catch (e) {
 			sendTgMessage(e.message, env.TG_BOT_TOKEN, env.TG_CHAT_ID);
