@@ -1,6 +1,7 @@
 name = "skland-attendance-cfworker"
 main = "src/worker.js"
 compatibility_date = "2023-10-25"
+compatibility_flags = [ "nodejs_compat" ]
 
 # Cron Triggers
 # Docs: https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/
