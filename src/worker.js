@@ -172,6 +172,7 @@ export default {
 	},
 	async fetch(event, env, ctx) {
 		try {
+			if (new URL(event.url).pathname !== '/trigger') return new Response('', { status: 404 });
 			await main(event, env, ctx);
 			return new Response('Triggered');
 		} catch (e) {
